@@ -17,9 +17,6 @@ public class Usuario {
     @Column(name = "contraseña", nullable = false)
     private String contraseña;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Pedido> pedidos;
-
     @ManyToOne
     @JoinColumn(name = "id_rol", referencedColumnName = "id_rol")
     private Rol idRol;
@@ -34,7 +31,6 @@ public class Usuario {
         this.correo = correo;
         this.contraseña = contraseña;
         this.idRol = idRol;
-        this.pedidos = pedidos;
     }
 
     //Getters y setters
@@ -62,14 +58,6 @@ public class Usuario {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
-    }
-
-    public List<Pedido> getPedidos() {
-        return pedidos;
-    }
-
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
     }
 
     public Rol getIdRol() {

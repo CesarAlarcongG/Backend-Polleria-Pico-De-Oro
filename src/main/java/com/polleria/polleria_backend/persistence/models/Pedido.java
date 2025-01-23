@@ -30,7 +30,7 @@ public class Pedido {
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_usuario")
     private Usuario cliente;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "id_motorizado", referencedColumnName = "id_usuario")
     private Usuario motorizado;
 

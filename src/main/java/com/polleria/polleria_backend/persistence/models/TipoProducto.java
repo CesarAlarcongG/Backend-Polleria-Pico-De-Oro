@@ -1,6 +1,6 @@
 package com.polleria.polleria_backend.persistence.models;
 
-import com.polleria.polleria_backend.persistence.enums.TipoPedidoEnum;
+import com.polleria.polleria_backend.persistence.enums.TipoProductoEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,19 +11,20 @@ public class TipoProducto {
     private int idTipoPedido;
 
     @Enumerated(EnumType.STRING)
-    private TipoPedidoEnum tipoPedido;
+    private TipoProductoEnum tipoProducto;
 
     //Constructores
 
     public TipoProducto() {
     }
 
-    public TipoProducto(int idTipoPedido, TipoPedidoEnum tipoPedido) {
+    public TipoProducto(int idTipoPedido, TipoProductoEnum tipoPedido) {
         this.idTipoPedido = idTipoPedido;
-        this.tipoPedido = tipoPedido;
+        this.tipoProducto = tipoPedido;
     }
 
     //Getters y setters
+
 
     public int getIdTipoPedido() {
         return idTipoPedido;
@@ -33,11 +34,11 @@ public class TipoProducto {
         this.idTipoPedido = idTipoPedido;
     }
 
-    public TipoPedidoEnum getTipoPedido() {
-        return tipoPedido;
+    public TipoProductoEnum getTipoPedido() {
+        return tipoProducto;
     }
 
-    public void setTipoPedido(TipoPedidoEnum tipoPedido) {
-        this.tipoPedido = tipoPedido;
+    public void setTipoPedido(TipoProductoEnum tipoPedido) {
+        this.tipoProducto = tipoPedido;
     }
 }

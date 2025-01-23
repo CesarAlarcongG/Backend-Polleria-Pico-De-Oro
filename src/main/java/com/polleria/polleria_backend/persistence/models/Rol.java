@@ -11,14 +11,14 @@ public class Rol {
     private int idRol;
 
     @Enumerated(value = EnumType.STRING)
-    private RolEnum rolEnum;
+    private RolEnum rol;
 
     public Rol() {
     }
 
-    public Rol(int idRol, RolEnum rolEnum) {
+    public Rol(int idRol, RolEnum rol) {
         this.idRol = idRol;
-        this.rolEnum = rolEnum;
+        this.rol = rol;
     }
 
     public int getIdRol() {
@@ -30,10 +30,10 @@ public class Rol {
     }
 
     public RolEnum getRolEnum() {
-        return rolEnum;
+        return rol;
     }
 
-    public void setRolEnum(RolEnum rolEnum) {
-        this.rolEnum = rolEnum;
+    public void setRolEnum(RolEnum rol) {
+        this.rol = rol;
     }
 }

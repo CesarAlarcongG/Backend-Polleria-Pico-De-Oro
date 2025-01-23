@@ -1,6 +1,6 @@
 package com.polleria.polleria_backend.persistence.models;
 
-import com.polleria.polleria_backend.persistence.enums.TipoPedidoEnum;
+import com.polleria.polleria_backend.persistence.enums.TipoProductoEnum;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -12,13 +12,13 @@ public class Producto {
     private int idProducto;
 
     @Column(name = "nombre_pedido")
-    private String nombrePedido;
+    private String nombreProducto;
 
     @Column(name = "precio_pedido")
     private float precioProducto;
 
     @Enumerated(EnumType.STRING)
-    private TipoPedidoEnum tipoPedido;
+    private TipoProductoEnum tipoProducto;
 
     @ManyToMany (mappedBy = "productos")
     private List<Pedido> pedidos;
@@ -28,15 +28,16 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int idProducto, String nombrePedido, float precioProducto, TipoPedidoEnum tipoPedido, List<Pedido> pedidos) {
+    public Producto(int idProducto, String nombreProducto, float precioProducto, TipoProductoEnum tipoProducto, List<Pedido> pedidos) {
         this.idProducto = idProducto;
-        this.nombrePedido = nombrePedido;
+        this.nombreProducto = nombreProducto;
         this.precioProducto = precioProducto;
-        this.tipoPedido = tipoPedido;
+        this.tipoProducto = tipoProducto;
         this.pedidos = pedidos;
     }
 
     //Getters y setters
+
 
     public int getIdProducto() {
         return idProducto;
@@ -46,12 +47,12 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
-    public String getNombrePedido() {
-        return nombrePedido;
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
-    public void setNombrePedido(String nombrePedido) {
-        this.nombrePedido = nombrePedido;
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
     public float getPrecioProducto() {
@@ -62,12 +63,12 @@ public class Producto {
         this.precioProducto = precioProducto;
     }
 
-    public TipoPedidoEnum getTipoPedido() {
-        return tipoPedido;
+    public TipoProductoEnum getTipoProducto() {
+        return tipoProducto;
     }
 
-    public void setTipoPedido(TipoPedidoEnum tipoPedido) {
-        this.tipoPedido = tipoPedido;
+    public void setTipoProducto(TipoProductoEnum tipoProducto) {
+        this.tipoProducto = tipoProducto;
     }
 
     public List<Pedido> getPedidos() {
